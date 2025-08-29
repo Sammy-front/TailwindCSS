@@ -1,19 +1,24 @@
 import Image from "next/image";
+import HeaderBase from "./components/Headers/HeaderBase/HeaderBase.jsx";
+import SecondHeader from "./components/Headers/SecondHeader/SecondHeader";
+import Footer from "./components/Footer/Footer";
+
 
 export default function Home() {
   return (
     <>
-      <header className="mx-auto">
+      <HeaderBase />
+      <SecondHeader />
 
-        <div className="bg-white w-auto h-11">
-          <h2 className="text-sm text-black font-bold md:text-base">Grammarly</h2>
-          button.
-        </div>
+      <section>
+<p>sadsadasda</p>
 
-        <div className="bg-gray-300 w-auto h-13">
+      </section>
 
-        </div>
-      </header>
+      <Footer />
     </>
   );
 }
+
+
+// options e Select
