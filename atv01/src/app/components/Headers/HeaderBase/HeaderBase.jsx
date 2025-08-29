@@ -1,5 +1,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
+
 export default function HeaderBase() {
     return (
         <header className="bg-white w-auto h-11 justify-center items-center grid grid-cols-13">
@@ -9,7 +10,7 @@ export default function HeaderBase() {
             </div>
 
             <div className="col-span-9 ml-27 grid-cols-5 container mx-auto grid">
-                <Menu>
+                <Menu as="div" className="relative inline-block">
                     <MenuButton>
                         Why Grammarly
                         <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
