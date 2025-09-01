@@ -6,12 +6,12 @@ export default function Card() {
         { id: 3, titulo: 'Plano Master', preco: 'R$ 550.70', descricao: '🤖 Pacotes e IA Grammarly V 3.5', descricao2: '🎯 2 anos de acesso a estudos de utilização de IA' },
     ];
     const cards = [
-        { id: 4, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: require('../../../../public/logo/Quadro.png') },
-        { id: 5, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: require('../../../../public/logo/Quadro.png') },
-        { id: 6, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: require('../../../../public/logo/Quadro.png') },
-        { id: 7, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: require('../../../../public/logo/Quadro.png') },
-        { id: 8, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: require('../../../../public/logo/Quadro.png') },
-        { id: 9, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: require('../../../../public/logo/Quadro.png') }
+        { id: 4, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
+        { id: 5, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
+        { id: 6, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
+        { id: 7, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
+        { id: 8, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
+        { id: 9, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' }
 
     ];
 
