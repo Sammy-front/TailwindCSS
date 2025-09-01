@@ -17,6 +17,20 @@ export default function Card() {
 
     return (
         <>
+
+            <div className="grid grid-cols-1 gap-4 justify-center items-center md:grid-cols-2 lg:grid-cols-3">
+                {cards.map((card) => (
+                    <div key={card.id}>
+                        <div className="p-5">
+                            <img src={card.img} className="w-50 h-50" />
+                        </div>
+
+                        <div className="flex flex-col justify-center items-center">
+                            <h2 className="font-bold text-2xl">asd</h2>
+                        </div>
+                    </div>
+                ))}
+            </div>
             <div className="grid gap-3 justify-center items-center grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
                 {assinaturas.map((card) => (
                     <div key={card.id} className="bg-[#3c4577] rounded-xl p-5 flex flex-col border border-[#0d1436] w-full max-w-sm mx-auto">
