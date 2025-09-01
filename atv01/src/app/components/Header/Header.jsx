@@ -62,7 +62,7 @@ export default function Header() {
                 </button>
 
                 <div className="w- flex items-center justify-center">
-                    <a className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+                    <a className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100" href="#">
                         Pricing
                     </a>
                 </div>
@@ -75,13 +75,13 @@ export default function Header() {
                 </Menu>
 
                 <div className="w- flex items-center justify-center">
-                    <a className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+                    <a className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100" href="#">
                         Learn
                     </a>
                 </div>
 
                 <div className="w flex items-center justify-center">
-                    <a className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+                    <a className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-base font-medium text-black hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100" href="#">
                         Security
                     </a>
                 </div>
