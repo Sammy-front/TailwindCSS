@@ -2,85 +2,86 @@ export default function Card() {
     const cards = [
         {
             id: 1,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: './logo/grammarly.png',
-            tag: ["", "", ""]
+            titulo: 'ChatGPT Plus',
+            descricao: '💡 Inteligência Artificial avançada para responder, criar textos e auxiliar em estudos e projetos.',
+            img: './logo/chatgpt.png',
+            tag: ["chat", "produtividade", "estudos"]
         },
         {
             id: 2,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Grammarly AI',
+            descricao: '📝 Ferramenta de escrita que corrige gramática, estilo e clareza em tempo real.',
+            img: './logo/grammarly.png',
+            tag: ["escrita", "correção", "trabalho"]
         },
         {
             id: 3,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'MidJourney',
+            descricao: '🎨 IA criadora de imagens realistas e artísticas a partir de descrições de texto.',
+            img: './logo/midjourney.png',
+            tag: ["arte", "design", "criatividade"]
         },
         {
             id: 4,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Claude AI',
+            descricao: '🤖 Assistente de escrita focado em produtividade, clareza e respostas seguras.',
+            img: './logo/claude.png',
+            tag: ["trabalho", "pesquisa", "produtividade"]
         },
         {
             id: 5,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Copilot GitHub',
+            descricao: '💻 IA para programadores que sugere códigos, funções e soluções automáticas.',
+            img: './logo/copilot.png',
+            tag: ["código", "programação", "dev"]
         },
         {
             id: 6,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Perplexity AI',
+            descricao: '🔍 Motor de busca inteligente que responde com base em fontes verificadas.',
+            img: './logo/perplexity.png',
+            tag: ["pesquisa", "busca", "informação"]
         },
         {
             id: 7,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Runway Gen-2',
+            descricao: '🎬 IA criadora de vídeos a partir de texto, revolucionando o audiovisual.',
+            img: './logo/runway.png',
+            tag: ["vídeo", "edição", "criatividade"]
         },
         {
             id: 8,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Stable Diffusion',
+            descricao: '🖌️ IA open-source para criação de imagens personalizadas com alto realismo.',
+            img: './logo/stablediffusion.png',
+            tag: ["arte", "open-source", "imagens"]
         },
         {
             id: 9,
-            titulo: 'Plano Basic',
-            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
-            img: '',
-            tag: ["", "", ""]
+            titulo: 'Jasper AI',
+            descricao: '📢 IA especializada em marketing e criação de conteúdo publicitário.',
+            img: './logo/jasper.png',
+            tag: ["marketing", "conteúdo", "redação"]
         },
+        
     ];
 
     return (
         <>
-            <div className="w-sm m-auto justify-center items-center flex  md:w-full ">
-                <div className="justify-center items-center gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-
+            <div className="w-sm m-auto justify-center items-center flex md:w-full ">
+                <div className="justify-center items-center gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2">
 
                     {cards.map((card) => (
 
-                        <div key={card.id} className="bg-[#1e2550] w-50 flex md:w-130" >
+                        <div key={card.id} className="bg-[#1e2550] w-60 md:flex md:w-100 lg:w-120 " >
                             <div className="p-5">
                                 <img src={card.img} className="w-50 h-50" />
                             </div>
 
-                            <div className="flex flex-col justify-center items-center">
-                                <h2 className="font-bold text-2xl">asd</h2>
-                                <p className="text-base">hhhh</p>
+                            <div className="flex flex-col justify-center items-center px-2">
+                                <h2 className="font-bold text-2xl">{card.titulo}</h2>
+                                <div className="bg-amber-100 w-40 h-[3px]"></div>
+                                <p className="text-base pt-5">{card.descricao}</p>
 
                                 <button className="">button</button>
                             </div>
