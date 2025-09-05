@@ -1,38 +1,96 @@
 export default function Card() {
-
     const cards = [
-        // { id: 1, titulo: 'Plano Basic', preco: 'R$ 200.90', descricao: '🤖 Pacotes e IA Grammarly V 1.5', descricao2: '🎯 6 Messes de acesso a estudos de utilização de IA' },
-        // { id: 2, titulo: 'Plano Pro', preco: 'R$ 400.90', descricao: '🤖 Pacotes e IA Grammarly V 2', descricao2: '🎯 1 anos de acesso a estudos de utilização de IA' },
-        // { id: 3, titulo: 'Plano Master', preco: 'R$ 550.70', descricao: '🤖 Pacotes e IA Grammarly V 3.5', descricao2: '🎯 2 anos de acesso a estudos de utilização de IA' },
-        { id: 4, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
-        // { id: 5, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
-        // { id: 6, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
-        // { id: 7, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
-        // { id: 8, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' },
-        // { id: 9, titulo: 'assinatura', descricao: 'Compre já a nossa nova IA chamada Potato', img: '/logo/Quadro.png' }
-
+        {
+            id: 1,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: './logo/grammarly.png',
+            tag: ["", "", ""]
+        },
+        {
+            id: 2,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 3,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 4,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 5,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 6,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 7,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 8,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
+        {
+            id: 9,
+            titulo: 'Plano Basic',
+            descricao: '🤖 Pacotes e IA Grammarly V 1.5',
+            img: '',
+            tag: ["", "", ""]
+        },
     ];
 
     return (
         <>
+            <div className="w-sm m-auto justify-center items-center flex  md:w-full ">
+                <div className="justify-center items-center gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-            <div className="grid grid-cols-1 gap-4 justify-center items-center md:grid-cols-2 lg:grid-cols-3">
-                {cards.map((card) => (
-                    <div key={card.id}>
-                        <div className="p-5">
-                            <img src={card.img} className="w-50 h-50" />
-                        </div>cdcd 
 
-                        <div className="flex flex-col justify-center items-center">
-                            <h2 className="font-bold text-2xl">asd</h2>
-                            <p className="text-base">hhhh</p>
+                    {cards.map((card) => (
 
-                            <button className="">button</button>
+                        <div key={card.id} className="bg-[#1e2550] w-50 flex md:w-130" >
+                            <div className="p-5">
+                                <img src={card.img} className="w-50 h-50" />
+                            </div>
+
+                            <div className="flex flex-col justify-center items-center">
+                                <h2 className="font-bold text-2xl">asd</h2>
+                                <p className="text-base">hhhh</p>
+
+                                <button className="">button</button>
+                            </div>
                         </div>
-                    </div>
-                ))}
+
+
+
+                    ))}
+                </div>
             </div>
-            
         </>
     );
 }
@@ -55,7 +113,7 @@ export default function Card() {
 //         </h2>
 
 //         <p className="text-gray-600 text-base md:text-lg mb-5">
-//           Este é um exemplo de card responsivo com TailwindCSS. 
+//           Este é um exemplo de card responsivo com TailwindCSS.
 //           No celular a imagem aparece em cima, e no PC aparece à esquerda.
 //         </p>
 
