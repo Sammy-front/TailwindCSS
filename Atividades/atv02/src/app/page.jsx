@@ -7,27 +7,36 @@ export default function Home() {
     <>
       <Header />
 
-      <section className="my-16 flex flex-col mx-auto container md:flex-row justify-center items-center gap-10 md: px-20">
+      <section className="my-16 flex flex-col-reverse md:flex-row items-center justify-center gap-10 container mx-auto px-6 md:px-20">
 
-        <div className="flex flex-col gap-14">
-          <div>
-            <h2 className="text-4xl text-cente font-extrabold cursor-default">AI Your Business Can <br />Run With</h2>
-          </div>
+        {/* Texto */}
+        <div className="flex flex-col gap-8 text-center md:text-left">
+          <h2 className="text-3xl md:text-5xl font-extrabold cursor-default leading-tight">
+            AI Your Business Can <br /> Run With
+          </h2>
 
-          <div className="text-lg cursor-default">
-            Grammarly Business combines AI communication assistance  <br />with the knowledge of your entire organization to achieve <br /> results. Experencie work with the intelligence you need, <br /> when you need it, where you're already working.
-          </div>
+          <p className="text-base md:text-lg cursor-default leading-relaxed">
+            Grammarly Business combines AI communication assistance <br className="hidden md:block" />
+            with the knowledge of your entire organization to achieve <br className="hidden md:block" />
+            results. Experience work with the intelligence you need, <br className="hidden md:block" />
+            when you need it, where you're already working.
+          </p>
 
-          <div className="bg-white md:w-56 w-2/3 container mx-auto md:mx-0 rounded-lg font-bold flex items-center justify-center hover:bg-neutral-200 transition">
-            <a href="#" className="text-black px-6 py-4">Start a Free Trial</a>
+          <div className="bg-white md:w-56 w-full max-w-xs mx-auto md:mx-0 rounded-lg font-bold flex items-center justify-center hover:bg-neutral-200 transition">
+            <a href="#" className="text-black px-6 py-4 block">Start a Free Trial</a>
           </div>
         </div>
 
-        <div>
-          <img src="./logo/Quadro.png" alt="" className="w-150 h-120 mx-10" />
+        {/* Imagem */}
+        <div className="flex justify-center md:justify-end w-full md:w-1/2">
+          <img
+            src="./logo/Quadro.png"
+            alt="AI Illustration"
+            className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto"
+          />
         </div>
-
       </section>
+
       <Card />
 
       <Footer />
