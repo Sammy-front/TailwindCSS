@@ -63,7 +63,6 @@ export default function Card() {
             img: './logo/jasper.png',
             tag: ["marketing", "conteúdo", "redação"]
         },
-
     ];
 
     return (
