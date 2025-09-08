@@ -84,6 +84,12 @@ export default function Card() {
 
                                 <p className="text-sm  mb-4 md:text-base">{card.descricao}</p>
 
+                                <div className="flex flex-wrap justify-center gap-1 mb-2">
+                                    {card.tag.map((tags, index) => (
+                                        <span key={index} className="text-[10px] bg-emerald-700 text-white px-2 py-0.5 rounded-full">#{tags}</span>
+                                    ))}
+                                </div>
+
                                 <button className="mt-auto px-4 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 focus:outline-2 focus:outline-offset-2 focus:outline-emerald-800 active:bg-emerald-900">
                                     Saiba Mais
                                 </button>
