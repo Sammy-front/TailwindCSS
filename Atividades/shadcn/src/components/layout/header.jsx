@@ -34,7 +34,7 @@ import { Menu } from "lucide-react";
 
 export default function Header() {
     return (
-        <header className="w-full border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <header className="w-full border-b bg-[var(--color-sidebar)] backdrop-blur-md sticky top-0 z-50">
 
             <div className="flex items-center justify-between w-full max-w-7xl mx-auto p-4">
 
