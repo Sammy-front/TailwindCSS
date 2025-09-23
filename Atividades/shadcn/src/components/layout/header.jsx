@@ -36,23 +36,23 @@ export default function Header() {
     return (
         <header className="w-full border-b bg-[var(--color-sidebar)] backdrop-blur-md sticky top-0 z-50">
 
-            <div className="flex items-center justify-between w-full max-w-7xl mx-auto p-4">
+            <div className="flex items-center justify-between w-full max-w-8xl mx-auto p-4">
 
                 <div className="flex items-center gap-4 lg:gap-8">
 
                     {/* Logo */}
-                    <div className="flex items-center">
-                        <Avatar className={"w-10 h-10"}>
-                            <AvatarImage src="./img/zenith.gif" />
+                    <div className="flex items-center pl-10 pr-30">
+                        <Avatar className={"w-12 h-12 rounded-none"}>
+                            <AvatarImage src="./img/athes.png" />
                             <AvatarFallback>Z</AvatarFallback>
                         </Avatar>
                         <h2 className="font-bold text-2xl px-2 text-gray-900">Zenith</h2>
                     </div>
 
-                    {/* NavBar - Items (Oculto em telas menores, visível em 'lg' e maiores) */}
+                    {/* NavBar */}
                     <NavigationMenu viewport={false} className="hidden lg:block">
                         {/* não criar varios menuList. caso queira fazer mais itens faça copiando o MenuItem */}
-                        <NavigationMenuList className="space-x-4">
+                        <NavigationMenuList className="space-x-5">
 
                             {/* item 1 */}
                             <NavigationMenuItem>
@@ -85,7 +85,7 @@ export default function Header() {
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="text-gray-700 hover:text-black">Sobre</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <NavigationMenuLink href="/sobre" className="px-4 py-2 block">Nossa História</NavigationMenuLink>
+                                    <NavigationMenuLink href="/sobre" className="px-2 py-2 block w-27">Nossa História</NavigationMenuLink>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 
@@ -93,7 +93,7 @@ export default function Header() {
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="text-gray-700 hover:text-black">Contato</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <NavigationMenuLink href="/contato" className="px-4 py-2 block">Contate nos</NavigationMenuLink>
+                                    <NavigationMenuLink href="/contato" className="px-4 py-2 block w-28">Contate-nos</NavigationMenuLink>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
 

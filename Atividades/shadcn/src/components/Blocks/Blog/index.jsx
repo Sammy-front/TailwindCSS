@@ -11,48 +11,48 @@ import {
 
 
 const Blog = ({
-  heading = "Blog Posts",
-  description = "Discover the latest trends, tips, and best practices in modern web development. From UI components to design systems, stay updated with our expert insights.",
+  heading = "Artigos e Insights",
+  description = "Explore estratégias, práticas e novidades do universo SaaS. De gestão de projetos a automação de marketing, descubra como otimizar processos e impulsionar resultados.",
   posts = [
     {
       id: "post-1",
-      title: "Getting Started with shadcn/ui Components",
+      title: "Começando com Gerenciamento de Projetos",
       summary:
-        "Learn how to quickly integrate and customize shadcn/ui components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces.",
-      label: "Tutorial",
-      author: "Sarah Chen",
+        "Descubra como organizar suas tarefas, criar quadros Kanban e acompanhar prazos para aumentar a produtividade da sua equipe.",
+      label: "Projetos",
+      author: "Equipe Zenith",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      url: "#",
+      image: "/img/gestaoprojetos.jpg",
     },
     {
       id: "post-2",
-      title: "Building Accessible Web Applications",
+      title: "Automação de Marketing na Prática",
       summary:
-        "Explore how to create inclusive web experiences using shadcn/ui's accessible components. Discover practical tips for implementing ARIA labels, keyboard navigation, and semantic HTML.",
-      label: "Accessibility",
-      author: "Marcus Rodriguez",
+        "Aprenda a criar campanhas automatizadas, enviar e-mails segmentados e acompanhar métricas em tempo real para alcançar mais clientes.",
+      label: "Marketing",
+      author: "Equipe Zenith",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      url: "#",
+      image: "/img/automaçãomarketing.jpg",
     },
     {
       id: "post-3",
-      title: "Modern Design Systems with Tailwind CSS",
+      title: "Análises Avançadas para Decisões Inteligentes",
       summary:
-        "Dive into creating scalable design systems using Tailwind CSS and shadcn/ui. Learn how to maintain consistency while building flexible and maintainable component libraries.",
-      label: "Design Systems",
-      author: "Emma Thompson",
+        "Veja como usar relatórios automáticos e métricas detalhadas para identificar oportunidades e impulsionar o crescimento do seu negócio.",
+      label: "Análises",
+      author: "Equipe Zenith",
       published: "1 Jan 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      url: "#",
+      image: "/img/AnálisesInteligentes.jpeg",
     },
   ],
 }) => {
   return (
     <section>
       <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
-        
+
         <div className="text-center">
           <h2 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
             {heading}
@@ -77,7 +77,7 @@ const Blog = ({
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="h-full w-full object-cover object-center"
+                    className="h-full w-full object-cover rounded-xl object-center"
                   />
                 </a>
               </div>
@@ -97,7 +97,7 @@ const Blog = ({
                   target="_blank"
                   className="flex items-center text-foreground hover:underline"
                 >
-                  Read more
+                  Leia mais
                   <ArrowRight className="ml-2 size-4" />
                 </a>
               </CardFooter>

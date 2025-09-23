@@ -14,7 +14,7 @@ export default function CardsHome() {
     return (
         <>
             {cardsData.map((card, idx) => (
-                <Card key={idx}>
+                <Card key={idx} >
                     <CardHeader>
                         <CardTitle>{card.title}</CardTitle>
                         <CardDescription>{card.description}</CardDescription>
@@ -22,8 +22,8 @@ export default function CardsHome() {
                     <CardContent>
                         <p>{card.content}</p>
                     </CardContent>
-                    <CardFooter>
-                        <Button asChild>
+                    <CardFooter className={"flex flex-col items-center"}>
+                        <Button asChild >
                             <a href={card.button.href}>{card.button.text}</a>
                         </Button>
                     </CardFooter>

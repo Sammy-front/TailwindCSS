@@ -2,59 +2,59 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const defaultSections = [
-    {
-        title: "Product",
-        links: [
-            { name: "Overview", href: "#" },
-            { name: "Pricing", href: "#" },
-            { name: "Marketplace", href: "#" },
-            { name: "Features", href: "#" },
-        ],
-    },
-    {
-        title: "Company",
-        links: [
-            { name: "About", href: "#" },
-            { name: "Team", href: "#" },
-            { name: "Blog", href: "#" },
-            { name: "Careers", href: "#" },
-        ],
-    },
-    {
-        title: "Resources",
-        links: [
-            { name: "Help", href: "#" },
-            { name: "Sales", href: "#" },
-            { name: "Advertise", href: "#" },
-            { name: "Privacy", href: "#" },
-        ],
-    },
+  {
+    title: "Produto",
+    links: [
+      { name: "Visão Geral", href: "#" },
+      { name: "Planos e Preços", href: "#" },
+      { name: "Integrações", href: "#" },
+      { name: "Funcionalidades", href: "#" },
+    ],
+  },
+  {
+    title: "Empresa",
+    links: [
+      { name: "Sobre Nós", href: "#" },
+      { name: "Equipe", href: "#" },
+      { name: "Blog", href: "#" },
+      { name: "Carreiras", href: "#" },
+    ],
+  },
+  {
+    title: "Suporte",
+    links: [
+      { name: "Central de Ajuda", href: "#" },
+      { name: "Contato Comercial", href: "#" },
+      { name: "API & Docs", href: "#" },
+      { name: "Política de Privacidade", href: "#" },
+    ],
+  },
 ];
 
 const defaultSocialLinks = [
-    { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-    { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-    { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-    { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
+  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
+  { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
+  { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
 ];
 
 const defaultLegalLinks = [
-    { name: "Terms and Conditions", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+  { name: "Termos de Uso", href: "#" },
+  { name: "Política de Privacidade", href: "#" },
 ];
 
 const Footer = ({
-    logo = {
-        url: "https://www.shadcnblocks.com",
-        src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
-        alt: "logo",
-        title: "Shadcnblocks.com",
-    },
-    sections = defaultSections,
-    description = "A collection of components for your startup business or side project.",
-    socialLinks = defaultSocialLinks,
-    copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
-    legalLinks = defaultLegalLinks,
+  logo = {
+    url: "https:/",
+    src: "/img/athes.png",
+    alt: "logo",
+    title: "Zenith SaaS",
+  },
+  sections = defaultSections,
+  description = "Soluções SaaS para gestão, automação e crescimento do seu negócio.",
+  socialLinks = defaultSocialLinks,
+  copyright = "© 2024 Zenith. Todos os direitos reservados.",
+  legalLinks = defaultLegalLinks,
 }) => {
 
     return (
