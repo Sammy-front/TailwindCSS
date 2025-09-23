@@ -5,7 +5,7 @@
 
 @theme inline {
   --color-background: var(--background);
-  --color-background-button: var(--background-button);
+  --color-background-button: var(--background-button); /* my color */
   --color-foreground: var(--foreground);
   --font-sans: Inter, sans-serif;
   --font-mono: Fira Code, monospace;
@@ -35,7 +35,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
+  --color-popover: var(--popover); 
+  --color-popover-header: var(--popover-header); /* my color */
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) - 4px);
@@ -72,11 +73,12 @@
 :root {
   --radius: 0.5rem;
   --background: oklch(0.9891 0.0034 67.7840);
-  --background-button: oklch(#e6c4ad);
+  --background-button: oklch(#e6c4ad); /* my color */
   --foreground: oklch(0.2161 0.0061 56.0434);
   --card: oklch(1.0000 0 0);
   --card-foreground: oklch(0.2161 0.0061 56.0434);
   --popover: oklch(1.0000 0 0);
+  --popover-header: #e6c4ad; /* my color */
   --popover-foreground: oklch(0.2161 0.0061 56.0434);
   --primary: oklch(0.6278 0.1129 53.5290);
   --primary-foreground: oklch(1.0000 0 0);
