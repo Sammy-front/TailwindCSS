@@ -41,12 +41,12 @@ export default function Header() {
                 <div className="flex items-center gap-4 lg:gap-8">
 
                     {/* Logo */}
-                    <div className="flex items-center pl-10 pr-30">
-                        <Avatar className={"w-12 h-12 rounded-none"}>
+                    <div className="flex items-center lg:pl-10 lg:pr-30">
+                        <Avatar className={"w-16 h-12 rounded-none"}>
                             <AvatarImage src="./img/athes.png" />
                             <AvatarFallback>Z</AvatarFallback>
                         </Avatar>
-                        <h2 className="font-bold text-2xl px-2 text-gray-900">Zenith</h2>
+                        <h2 className="font-bold text-2xl px-2 text-gray-900 hover:text-[#68482f]">Zenith</h2>
                     </div>
 
                     {/* NavBar */}
@@ -56,7 +56,7 @@ export default function Header() {
 
                             {/* item 1 */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-gray-700 hover:text-black">Home</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Home</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavigationMenuLink href="/" className="px-4 py-2 block">Início</NavigationMenuLink>
                                 </NavigationMenuContent>
@@ -64,7 +64,7 @@ export default function Header() {
 
                             {/* item 2 */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-gray-700 hover:text-black">Produtos</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Produtos</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavigationMenuLink href="#" className="px-4 py-2 block">Celulares</NavigationMenuLink>
                                     <NavigationMenuLink href="#" className="px-4 py-2 block">Notebooks</NavigationMenuLink>
@@ -75,7 +75,7 @@ export default function Header() {
 
                             {/* item 3 */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-gray-700 hover:text-black">Serviços</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Serviços</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavigationMenuLink href="/servicos" className="px-4 py-2 block">Assistência</NavigationMenuLink>
                                 </NavigationMenuContent>
@@ -83,7 +83,7 @@ export default function Header() {
 
                             {/* item 4 */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-gray-700 hover:text-black">Sobre</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Sobre</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavigationMenuLink href="/sobre" className="px-2 py-2 block w-27">Nossa História</NavigationMenuLink>
                                 </NavigationMenuContent>
@@ -91,7 +91,7 @@ export default function Header() {
 
                             {/* item 5 */}
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger className="text-gray-700 hover:text-black">Contato</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Contato</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavigationMenuLink href="/contato" className="px-4 py-2 block w-28">Contate-nos</NavigationMenuLink>
                                 </NavigationMenuContent>
@@ -178,6 +178,7 @@ export default function Header() {
                         </Drawer>
                     </div>
 
+                    {/* Avatar */}
                     <Avatar className={"w-10 h-10 lg:w-12 lg:h-12"}>
                         <AvatarImage src="https://github.com/shadcn.png" />
                         <AvatarFallback>U</AvatarFallback>

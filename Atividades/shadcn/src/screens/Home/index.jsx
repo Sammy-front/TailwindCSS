@@ -14,7 +14,7 @@ export default function CardsHome() {
     return (
         <>
             {cardsData.map((card, idx) => (
-                <Card key={idx} >
+                <Card key={idx}>
                     <CardHeader>
                         <CardTitle>{card.title}</CardTitle>
                         <CardDescription>{card.description}</CardDescription>

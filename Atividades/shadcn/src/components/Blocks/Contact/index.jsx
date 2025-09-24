@@ -21,7 +21,7 @@ const Contact = ({
   chatLink = "Iniciar Chat",
 }) => {
     return (
-        <section className="container mx-auto flex flex-col items-center bg-background pb-24">
+        <section className="container mx-auto flex flex-col items-center bg-background px-2 pb-24">
             <div className="container">
                 <div className="mb-14">
                     <h1 className="mb-3 mt-2 text-balance text-3xl font-semibold md:text-4xl">

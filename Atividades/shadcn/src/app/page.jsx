@@ -1,10 +1,10 @@
+import { Contact } from "@/components/Blocks/Contact/index";
 import { Separator } from "@/components/ui/separator";
 import Header from "@/components/layout/header.jsx";
-import Image from "next/image";
 import { Footer } from "@/components/Blocks/Footer";
 import { Blog } from "@/components/Blocks/Blog";
 import CardsHome from "@/screens/Home/index";
-import { Contact } from "@/components/Blocks/Contact/index";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -20,6 +20,10 @@ export default function Home() {
         </div>
         <Contact />
       </main>
+
+      <div className={"py-10"}>
+        <Separator />
+      </div>
 
       {/* Footer */}
       <Footer />

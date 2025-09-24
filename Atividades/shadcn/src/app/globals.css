@@ -90,7 +90,8 @@
   --accent: oklch(0.9568 0.0310 79.9327);
   --accent-foreground: oklch(0.4762 0.1034 61.9071);
   --destructive: oklch(0.5771 0.2152 27.3250);
-  --border: oklch(0.9232 0.0026 48.7171);
+  --border: #bd8c6c; /* my color */
+  --border2: oklch(0.9232 0.0026 48.7171); /* Color antiga */
   --border-header: #b49580;
   --input: oklch(0.9699 0.0013 106.4238);
   --ring: oklch(0.6278 0.1129 53.5290);

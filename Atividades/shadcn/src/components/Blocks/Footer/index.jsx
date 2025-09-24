@@ -58,9 +58,10 @@ const Footer = ({
 }) => {
 
     return (
-        <section className="">
+        <section className="p-2 lg:p-0">
             <div className="container mx-auto">
                 <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
+                    {/* Logo, textinho e Icons */}
                     <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
                         {/* Logo */}
                         <div className="flex items-center gap-2 lg:justify-start">
@@ -77,6 +78,7 @@ const Footer = ({
                         <p className="text-muted-foreground max-w-[70%] text-sm">
                             {description}
                         </p>
+                        {/* Social Icons */}
                         <ul className="text-muted-foreground flex items-center space-x-6">
                             {socialLinks.map((social, idx) => (
                                 <li key={idx} className="hover:text-primary font-medium">
@@ -87,7 +89,9 @@ const Footer = ({
                             ))}
                         </ul>
                     </div>
-                    <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+
+                    
+                    <div className="grid grid-cols-2 justify-items-center w-full gap-6 md:grid-cols-3 lg:gap-20">
                         {sections.map((section, sectionIdx) => (
                             <div key={sectionIdx}>
                                 <h3 className="mb-4 font-bold">{section.title}</h3>
