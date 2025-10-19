@@ -1,5 +1,8 @@
 "use client"
 
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import Cookies from "js-cookie"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -16,94 +19,112 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
-// adicionados
-import { useState } from "react"
-import Cookies from "js-cookie"
-import { useRouter } from "next/navigation"
-// -------------------------------------------
-
-export function LoginForm({ className, ...props}) {
-  // coisas do Cookie
+export function LoginForm({ className, ...props }) {
   const router = useRouter()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    try{
-      const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "login", {
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
         method: "POST",
-        headers:{
-          'Content-Type': 'application/json'
+        headers: {
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username, password }),
       })
 
       const data = await response.json()
-      if(!response.ok) {
-        throw new Error("Error ao fazer login")
+
+      if (!response.ok) {
+        // Assume que a API retorna uma mensagem de erro em `data.message` ou similar
+        throw new Error(data.message || "Credenciais inválidas. Por favor, tente novamente.")
       }
-      if(data.accessToken){
+
+      if (data.accessToken) {
         Cookies.set('token', data.accessToken, {
-          expires: 1,
-          secure: true,
-          sameSite: 'strict'
+          expires: 1, // Expira em 1 dia
+          secure: process.env.NODE_ENV === 'production', // Use 'secure' apenas em produção
+          sameSite: 'strict',
         })
-        alert("login bem-sucedido")
+        // Opcional: pode ser trocado por um toast de sucesso
+        alert("Login bem-sucedido!")
         router.push('/lista')
       }
-    } catch (error){
-
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setIsLoading(false)
     }
   }
-  
-// ---------------------------------
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
+          <CardTitle>Acesse sua conta</CardTitle>
           <CardDescription>
-            Enter your username below to login to your account
+            Digite seu nome de usuário para entrar.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {/* não pode esquecer:  onSubmit={handleLogin} */}
           <form onSubmit={handleLogin}>
             <FieldGroup>
+              {error && (
+                <Alert variant="destructive">
+                  <AlertTitle>Erro no Login</AlertTitle>
+                  <AlertDescription>{error}</AlertDescription>
+                </Alert>
+              )}
               <Field>
-                <FieldLabel htmlFor="username">username</FieldLabel>
-                {/* importante:    value={username} onChange={(e) => {setUsername(e.target.value)}}  */}
-
-                <Input id="username" type="username" placeholder="m@example.com" required  value={username} onChange={(e) => {setUsername(e.target.value)}}/>
-                
+                <FieldLabel htmlFor="username">Usuário</FieldLabel>
+                <Input
+                  id="username"
+                  type="text" // 'text' é mais apropriado que 'username'
+                  placeholder="exemplo@email.com"
+                  required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  disabled={isLoading}
+                />
               </Field>
               <Field>
                 <div className="flex items-center">
-                  <FieldLabel htmlFor="password">Password</FieldLabel>
+                  <FieldLabel htmlFor="password">Senha</FieldLabel>
                   <a
                     href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-                    Forgot your password?
+                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                  >
+                    Esqueceu sua senha?
                   </a>
                 </div>
-                <Input id="password" type="password" required value={password} onChange={(e) => {setPassword(e.target.value)}}/>
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  disabled={isLoading}
+                />
               </Field>
               <Field>
-                <Button type="submit">Login</Button>
-                <Button variant="outline" type="button">
-                  Login with Google
+                <Button type="submit" disabled={isLoading}>
+                  {isLoading ? "Entrando..." : "Entrar"}
                 </Button>
-                <FieldDescription className="text-center">
-                  Don&apos;t have an account? <a href="#">Sign up</a>
-                </FieldDescription>
+                
               </Field>
             </FieldGroup>
           </form>
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }

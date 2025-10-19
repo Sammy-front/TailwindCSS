@@ -40,6 +40,7 @@ app.post('/login', (req, res) => {
 
     // Para este exemplo, vamos usar credenciais fixas
     if (username === 'admin' && password === 'senai@123') {
+      // 
         // Se as credenciais estiverem corretas, crie o token
         const userPayload = { username: username, role: 'admin' };
         

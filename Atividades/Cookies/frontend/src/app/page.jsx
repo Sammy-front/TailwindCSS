@@ -5,10 +5,10 @@ import Header from "@/components/layout/header";
 export default function Navbar() {
   return (
     <>
-{/* NavBar */}
-    <Header />     
+      {/* NavBar */}
+      <Header />
 
-<Blog />
+      <Blog />
     </>
   );
 };

@@ -1,62 +1,82 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
-import { api } from "@/lib/api"
-import { Award } from "lucide-react"
+import { useState, useEffect, UseCallback } from 'react'
+import { api } from '@/lib/api'
 
 export function useItems(itemsInitial = []) {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const [items, setItems] = useState(itemsInitial)
-    // adicionar
+
     const addItem = async (newItemData) => {
-        console.log(newItemData)
+        console.log(newItemData);
+
         setLoading(true)
         setError(null)
+
         try {
-            const createdItem = await api.post("items", newItemData)
+            const createdItem = await api.post('items', newItemData)
+
             if (createdItem.error) {
-                setError("Erro ao criar item.")
+                setError("ERRO AO CRIAR ITEM!")
             }
+
             setItems((prevItems) => [...prevItems, createdItem])
+            setLoading(false)
         } catch (error) {
-            setError("Erro ao criar item")
+            setError("ERRO AO CRIAR ITEM!")
+
         }
     }
-    // delete
-    const delItem = async (id) => {
-        console.log(id)
+
+    const removeItem = async (id) => {
         setLoading(true)
         setError(null)
-        try {
-            const deletarItem = await api.del(`items/${id}`)
 
-            if (deletarItem.error) {
-                setError("Erro ao deletar o item.")
+        try {
+            const deleteItem = await api.del(`items/${id}`)
+
+            if (deleteItem.error) {
+                setError('ERRO AO EXCLUIR ITEM!')
+                return;
             }
 
             setItems((prevItems) => prevItems.filter((item) => item.id !== id))
         } catch (error) {
-            setError("Erro ao deletar")
+            setError('ERRO AO EXCLUIR ITEM!')
+        } finally {
+            setLoading(false)
         }
     }
-    // editar
-    const ediItem = async (id, updateItem) => {
-        console.log(id, updateItem)
+
+    const editItem = async (id, updatedItem) => {
         setLoading(true)
         setError(null)
-        try{
-            const editarItem = await api.put(`items/${id}`, updateItem)
 
-            setItems((prevItems) => prevItems.map((item) => item.id === id ? updateItem : item ))
+        try {
+            const editItem = await api.put(`items/${id}`, updatedItem)
 
-            if(editarItem.error){
-                setError("Erro ao editar")
+            if (editItem.error) {   
+                setError('ERRO AO EDITAR ITEM' + editItem.error)
+                return;
             }
-        } catch(error){
-            setError("Erro ao editar")
+
+            setItems((prevItems) => prevItems.map((item) => {
+                if (item.id === id) {
+                    return editItem
+                }
+
+                return item;
+            }))
+
+        } catch (error) {
+            setError('ERRO AO EDITAR ITEM')
+            
+        } finally {
+            setLoading(false)
         }
     }
 
-    return { items, loading, error, addItem, delItem, ediItem }
+    return { items, loading, error, addItem, removeItem, editItem }
+
 }

@@ -1,3 +1,4 @@
+import { PlusCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -14,83 +15,92 @@ import { Label } from "@/components/ui/label"
 import { useState } from "react"
 
 export default function ModalAddItem({ onAddItem }) {
-
+    // 1. Controle de estado para o modal e para os inputs
+    const [isOpen, setIsOpen] = useState(false)
     const [titulo, setTitulo] = useState("")
     const [status, setStatus] = useState("")
 
+    // 2. Função de submissão centralizada
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // Validação: não permite adicionar se o título estiver vazio
+        if (!titulo.trim()) {
+            return
+        }
+        
+        onAddItem({ titulo, status })
+
+        // Limpa os campos e fecha o modal após adicionar
+        setTitulo("")
+        setStatus("")
+        setIsOpen(false)
+    }
+
     return (
         <div className="p-3">
-
-            <Dialog>
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
-                    <Button
-                        variant="outline"
-                        className="border border-gray-300 hover:border-gray-400 hover:bg-gray-100 transition-all duration-200 rounded-xl shadow-sm"
-                    >
-                        ➕ Adicionar item
+                    {/* ESTILO: Botão com ícone e variante primária sutil */}
+                    <Button variant="outline">
+                        <PlusCircle className="mr-2 h-4 w-4" />
+                        Adicionar item
                     </Button>
                 </DialogTrigger>
 
-                <DialogContent className="sm:max-w-[425px] rounded-2xl shadow-xl border border-gray-200 bg-white/90 backdrop-blur-md">
-                    <DialogHeader className="text-center space-y-1">
-                        <DialogTitle className="text-lg font-semibold text-gray-800">
-                            Adicionando item
+                <DialogContent className="sm:max-w-[425px] rounded-xl shadow-lg bg-background/95 backdrop-blur-sm">
+                    <DialogHeader>
+                        <DialogTitle className="text-xl font-semibold">
+                            Adicionar Novo Item
                         </DialogTitle>
-                        <DialogDescription className="text-sm text-gray-500">
-                            Utilize este modal para adicionar itens à lista
+                        <DialogDescription>
+                            Preencha os campos abaixo para incluir um item na lista.
                         </DialogDescription>
                     </DialogHeader>
 
-                    <div className="grid gap-6 py-4">
-                        <div className="grid gap-2">
-                            <Label htmlFor="titulo" className="text-sm font-medium text-gray-700">
-                                Título
-                            </Label>
-                            <Input
-                                id="titulo"
-                                name="titulo"
-                                placeholder="Digite o título..."
-                                value={titulo}
-                                onChange={(e) => setTitulo(e.target.value)}
-                                className="border-gray-300 focus:ring-2 focus:ring-indigo-500 rounded-lg"
-                            />
+                    {/* 3. Uso da tag <form> para semântica e funcionalidade */}
+                    <form onSubmit={handleSubmit}>
+                        <div className="grid gap-4 py-4">
+                            <div className="grid grid-cols-4 items-center gap-4">
+                                <Label htmlFor="titulo" className="text-right">
+                                    Título
+                                </Label>
+                                <Input
+                                    id="titulo"
+                                    name="titulo"
+                                    placeholder="Ex: Estudar React"
+                                    value={titulo}
+                                    onChange={(e) => setTitulo(e.target.value)}
+                                    className="col-span-3"
+                                    required // Adiciona validação nativa do HTML
+                                />
+                            </div>
+
+                            <div className="grid grid-cols-4 items-center gap-4">
+                                <Label htmlFor="status" className="text-right">
+                                    Status
+                                </Label>
+                                <Input
+                                    id="status"
+                                    name="status"
+                                    placeholder="Ex: Em andamento"
+                                    value={status}
+                                    onChange={(e) => setStatus(e.target.value)}
+                                    className="col-span-3"
+                                />
+                            </div>
                         </div>
 
-                        <div className="grid gap-2">
-                            <Label htmlFor="status" className="text-sm font-medium text-gray-700">
-                                Status
-                            </Label>
-                            <Input
-                                id="status"
-                                name="status"
-                                placeholder="Digite o status..."
-                                value={status}
-                                onChange={(e) => setStatus(e.target.value)}
-                                className="border-gray-300 focus:ring-2 focus:ring-indigo-500 rounded-lg"
-                            />
-                        </div>
-                    </div>
-
-                    <DialogFooter className="flex justify-end gap-3">
-                        <DialogClose asChild>
-                            <Button
-                                variant="outline"
-                                className="rounded-lg border-gray-300 hover:bg-gray-100 text-gray-700"
-                            >
+                        <DialogFooter>
+                            {/* ESTILO: Usando a variante "secondary" para consistência */}
+                            <Button type="button" variant="secondary" onClick={() => setIsOpen(false)}>
                                 Cancelar
                             </Button>
-                        </DialogClose>
-                        <Button
-                            type="submit"
-                            onClick={(e) => {
-                                e.preventDefault()
-                                onAddItem({ titulo, status })
-                            }}
-                            className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white shadow-md"
-                        >
-                            Salvar
-                        </Button>
-                    </DialogFooter>
+                            {/* 4. Botão de salvar com estado de "disabled" */}
+                            <Button type="submit" disabled={!titulo.trim()}>
+                                Salvar
+                            </Button>
+                        </DialogFooter>
+                    </form>
                 </DialogContent>
             </Dialog>
         </div>

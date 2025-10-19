@@ -1,43 +1,43 @@
 import { ArrowRight } from "lucide-react";
-
+import { Badge } from "@/components/ui/badge"; // Supondo que você tenha o componente Badge do shadcn
 import { Card } from "@/components/ui/card";
 
 const Blog = ({
-  heading = "Blog Posts",
-  description = "Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
+  heading = "From the Blog",
+  description = "Descubra os insights e tutoriais mais recentes sobre desenvolvimento web moderno, design de UI e arquitetura orientada a componentes.",
   posts = [
     {
       id: "post-1",
       title:
-        "Building Modern UIs: A Deep Dive into Shadcn and React Components",
+        "Construindo UIs Modernas: Um Mergulho Profundo em Shadcn e Componentes React",
       summary:
-        "Join us for an in-depth exploration of building modern user interfaces using shadcn/ui and React. Learn best practices and advanced techniques.",
-      label: "Web Design",
+        "Junte-se a nós para uma exploração aprofundada da construção de interfaces de usuário modernas usando shadcn/ui e React.",
       author: "Sarah Chen",
-      published: "15 Feb 2024",
+      published: "15 Fev 2024",
       url: "https://shadcnblocks.com",
       image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
       tags: ["Web Design", "UI Development"],
     },
     {
       id: "post-2",
-      title: "Mastering Tailwind CSS: From Basics to Advanced Techniques",
+      title: "Dominando o Tailwind CSS: Do Básico às Técnicas Avançadas",
       summary:
-        "Discover how to leverage the full power of Tailwind CSS to create beautiful, responsive websites with clean and maintainable code.",
-      label: "Web Design",
+        "Descubra como aproveitar todo o poder do Tailwind CSS para criar sites bonitos e responsivos com código limpo e de fácil manutenção.",
       author: "Michael Park",
-      published: "22 Feb 2024",
+      published: "22 Fev 2024",
       url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
+      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
       tags: ["Web Design", "CSS"],
     },
   ],
 }) => {
   return (
-    <section className="py-32">
-      <div className="container flex flex-col items-center gap-16">
+    // ESTILO: Fundo sutil para a seção
+    <section className="py-24 sm:py-32 bg-muted/40">
+      <div className="container mx-auto">
+        {/* Cabeçalho da Seção */}
         <div className="text-center">
-          <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl">
+          <h2 className="mx-auto mb-4 text-pretty text-3xl font-semibold tracking-tight md:text-4xl lg:max-w-3xl">
             {heading}
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl md:text-lg">
@@ -45,58 +45,74 @@ const Blog = ({
           </p>
         </div>
 
-        <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
-          {posts.map((post) => (
+        {/* Grid de Posts */}
+        <div className="mt-16 grid gap-16 lg:grid-cols-1">
+          {posts.map((post, index) => (
             <Card
               key={post.id}
-              className="order-last border-0 bg-transparent shadow-none sm:order-first sm:col-span-12 lg:col-span-10 lg:col-start-2"
+              // ESTILO: Removido o espaçamento central para ocupar a largura total no grid
+              className="border-0 bg-transparent shadow-none"
             >
-              <div className="grid gap-y-6 sm:grid-cols-10 sm:gap-x-5 sm:gap-y-0 md:items-center md:gap-x-8 lg:gap-x-12">
-                <div className="sm:col-span-5">
-                  <div className="mb-4 md:mb-6">
-                    <div className="text-muted-foreground flex flex-wrap gap-3 text-xs uppercase tracking-wider md:gap-5 lg:gap-6">
-                      {post.tags?.map((tag) => <span key={tag}>{tag}</span>)}
+              <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
+                
+                {/* Imagem do Post */}
+                {/* ESTILO: Layout alternado usando a ordem (order) do flex/grid */}
+                <div className={`order-1 ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}>
+                  <a href={post.url} target="_blank" className="block group">
+                    <div className="aspect-video overflow-hidden rounded-lg border">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        // ESTILO: Efeito de zoom na imagem ao passar o mouse (hover)
+                        className="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      />
                     </div>
+                  </a>
+                </div>
+
+                {/* Conteúdo do Post */}
+                {/* ESTILO: Layout alternado usando a ordem (order) do flex/grid */}
+                <div className={`order-2 ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {/* ESTILO: Tags agora são "Badges" para maior destaque */}
+                    {post.tags?.map((tag) => (
+                      <Badge key={tag} variant="outline" className="font-normal">
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
-                  <h3 className="text-xl font-semibold md:text-2xl lg:text-3xl">
+                  
+                  <h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">
                     <a
                       href={post.url}
                       target="_blank"
-                      className="hover:underline"
+                      className="hover:text-primary transition-colors"
                     >
                       {post.title}
                     </a>
                   </h3>
-                  <p className="text-muted-foreground mt-4 md:mt-5">
+
+                  <p className="text-muted-foreground mt-4 text-base">
                     {post.summary}
                   </p>
-                  <div className="mt-6 flex items-center space-x-4 text-sm md:mt-8">
-                    <span className="text-muted-foreground">{post.author}</span>
+
+                  <div className="mt-6 flex items-center space-x-4 text-sm">
+                    <span className="font-medium">{post.author}</span>
                     <span className="text-muted-foreground">•</span>
-                    <span className="text-muted-foreground">
+                    <time className="text-muted-foreground">
                       {post.published}
-                    </span>
+                    </time>
                   </div>
-                  <div className="mt-6 flex items-center space-x-2 md:mt-8">
-                    <a
-                      href={post.url}
-                      target="_blank"
-                      className="inline-flex items-center font-semibold hover:underline md:text-base"
-                    >
-                      <span>Read more</span>
-                      <ArrowRight className="ml-2 size-4 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-                <div className="order-first sm:order-last sm:col-span-5">
-                  <a href={post.url} target="_blank" className="block">
-                    <div className="aspect-16/9 border-border overflow-clip rounded-lg border">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="fade-in h-full w-full object-cover transition-opacity duration-200 hover:opacity-70"
-                      />
-                    </div>
+
+                  {/* ESTILO: Adicionado 'group' para animar a seta no hover */}
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    className="group mt-6 inline-flex items-center font-semibold hover:text-primary transition-colors"
+                  >
+                    <span>Read more</span>
+                    {/* ESTILO: Seta se move para a direita no hover */}
+                    <ArrowRight className="ml-2 size-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </a>
                 </div>
               </div>
