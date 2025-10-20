@@ -3,33 +3,34 @@ import { Badge } from "@/components/ui/badge"; // Supondo que você tenha o comp
 import { Card } from "@/components/ui/card";
 
 const Blog = ({
-  heading = "From the Blog",
-  description = "Descubra os insights e tutoriais mais recentes sobre desenvolvimento web moderno, design de UI e arquitetura orientada a componentes.",
+  heading = "Central de Chamados",
+  description = "Registre e acompanhe solicitações de suporte, dúvidas ou problemas técnicos de forma rápida e organizada.",
   posts = [
     {
       id: "post-1",
       title:
-        "Construindo UIs Modernas: Um Mergulho Profundo em Shadcn e Componentes React",
+        "Como Abrir um Novo Chamado de Suporte",
       summary:
-        "Junte-se a nós para uma exploração aprofundada da construção de interfaces de usuário modernas usando shadcn/ui e React.",
-      author: "Sarah Chen",
-      published: "15 Fev 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg",
-      tags: ["Web Design", "UI Development"],
+        "Aprenda o passo a passo para registrar um novo chamado e garantir um atendimento mais ágil e eficiente pela nossa equipe técnica.",
+      author: "Equipe de Suporte",
+      published: "15 Out 2025",
+      url: "#",
+      image: "https://www.tiresolve.com/wp-content/uploads/2021/02/ilustracao-de-social-midia-conceito_53876-17828-1.jpg",
+      tags: ["Atendimento", "Suporte Técnico"],
     },
     {
       id: "post-2",
-      title: "Dominando o Tailwind CSS: Do Básico às Técnicas Avançadas",
+      title: "Dicas para Descrever seu Problema com Clareza",
       summary:
-        "Descubra como aproveitar todo o poder do Tailwind CSS para criar sites bonitos e responsivos com código limpo e de fácil manutenção.",
-      author: "Michael Park",
-      published: "22 Fev 2024",
-      url: "https://shadcnblocks.com",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-2.svg",
-      tags: ["Web Design", "CSS"],
+        "Veja como detalhar corretamente o seu chamado para facilitar o diagnóstico e agilizar a resolução do seu pedido.",
+      author: "Central de Atendimento",
+      published: "18 Out 2025",
+      url: "#",
+      image: "https://images.ctfassets.net/63bmaubptoky/JBmzcXeQjvfKwWAWpCZtdu5nq9iaBpteG4EdRc0DxMQ/8adb43095c085d450eb07fe5ceb40339/sistema-chamados-open-source-BR-Capterra-Header-1.png",
+      tags: ["Boas Práticas", "Suporte"],
     },
-  ],
+  ]
+  ,
 }) => {
   return (
     // ESTILO: Fundo sutil para a seção
@@ -54,7 +55,7 @@ const Blog = ({
               className="border-0 bg-transparent shadow-none"
             >
               <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
-                
+
                 {/* Imagem do Post */}
                 {/* ESTILO: Layout alternado usando a ordem (order) do flex/grid */}
                 <div className={`order-1 ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}>
@@ -81,7 +82,7 @@ const Blog = ({
                       </Badge>
                     ))}
                   </div>
-                  
+
                   <h3 className="text-2xl font-semibold tracking-tight lg:text-3xl">
                     <a
                       href={post.url}

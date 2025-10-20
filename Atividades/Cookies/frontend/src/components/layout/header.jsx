@@ -27,7 +27,6 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet";
 
-// Centralizando a configuração de navegação
 const features = [
     {
         title: "Dashboard",
@@ -82,17 +81,10 @@ export default function Navbar() {
             <div className="container mx-auto">
                 <nav className="flex items-center justify-between">
                     {/* Logo e Nome */}
-                    <a
-                        href="https://www.shadcnblocks.com"
-                        className="flex items-center gap-2"
-                    >
-                        <img
-                            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                            className="h-8 w-8"
-                            alt="Shadcn UI Navbar Logo"
-                        />
+                    <a href="#" className="flex items-center gap-2">
+                        <img src="https://www.suportenet.com.br/assets/images/suportenetlogo-1368x1368.png" className="h-8 w-8" alt="Shadcn UI Navbar Logo"/>
                         <span className="text-lg font-semibold tracking-tighter">
-                            Shadcnblocks.com
+                            Suporte.com
                         </span>
                     </a>
 
@@ -104,11 +96,7 @@ export default function Navbar() {
                                 <NavigationMenuContent>
                                     <div className="grid w-[600px] grid-cols-2 p-3">
                                         {features.map((feature) => (
-                                            <NavigationMenuLink
-                                                href={feature.href}
-                                                key={feature.title}
-                                                className="hover:bg-muted/70 rounded-md p-3 transition-colors"
-                                            >
+                                            <NavigationMenuLink href={feature.href} key={feature.title} className="hover:bg-muted/70 rounded-md p-3 transition-colors">
                                                 <div key={feature.title}>
                                                     <p className="text-foreground mb-1 font-semibold">
                                                         {feature.title}
@@ -155,15 +143,8 @@ export default function Navbar() {
                             <SheetContent side="top" className="max-h-screen overflow-y-auto">
                                 <SheetHeader className="mb-4">
                                     <SheetTitle>
-                                        <a
-                                            href="https://www.shadcnblocks.com"
-                                            className="flex items-center gap-2"
-                                        >
-                                            <img
-                                                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                                                className="h-8 w-8"
-                                                alt="Shadcn UI Navbar Logo"
-                                            />
+                                        <a href="https://www.shadcnblocks.com" className="flex items-center gap-2">
+                                            <img src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg" className="h-8 w-8" alt="Shadcn UI Navbar Logo"/>
                                             <span className="text-lg font-semibold tracking-tighter">
                                                 Shadcnblocks.com
                                             </span>
@@ -179,11 +160,7 @@ export default function Navbar() {
                                             <AccordionContent>
                                                 <div className="grid grid-cols-1 gap-2 p-2 sm:grid-cols-2">
                                                     {features.map((feature) => (
-                                                        <a
-                                                            key={feature.title}
-                                                            href={feature.href}
-                                                            className="hover:bg-muted/70 rounded-md p-3 transition-colors"
-                                                        >
+                                                        <a key={feature.title} href={feature.href} className="hover:bg-muted/70 rounded-md p-3 transition-colors">
                                                             <p className="text-foreground mb-1 font-semibold">
                                                                 {feature.title}
                                                             </p>
