@@ -2,7 +2,7 @@
   {
     "id": "1",
     "titulo": "Finalizar relatório",
-    "status": "pendente"
+    "status": "feito"
   },
   {
     "id": "2",
@@ -13,80 +13,5 @@
     "id": "3",
     "titulo": "Comprar ingressos para o cinema",
     "status": "pendente"
-  },
-  {
-    "id": "1759758460734",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758851811",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758851962",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758852098",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758852305",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758852538",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758852689",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758852962",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758853130",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758853293",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758853538",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758853705",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1759758853850",
-    "titulo": "dsd",
-    "status": "dsd"
-  },
-  {
-    "id": "1760095804241",
-    "titulo": "sd",
-    "status": "fs"
-  },
-  {
-    "id": "1760095830247",
-    "titulo": "dsdadsaasf",
-    "status": "fs"
   }
 ]

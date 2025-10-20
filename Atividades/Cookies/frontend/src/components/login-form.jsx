@@ -34,7 +34,7 @@ export function LoginForm({ className, ...props }) {
     setError(null)
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}login`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -45,17 +45,15 @@ export function LoginForm({ className, ...props }) {
       const data = await response.json()
 
       if (!response.ok) {
-        // Assume que a API retorna uma mensagem de erro em `data.message` ou similar
         throw new Error(data.message || "Credenciais inválidas. Por favor, tente novamente.")
       }
 
       if (data.accessToken) {
         Cookies.set('token', data.accessToken, {
-          expires: 1, // Expira em 1 dia
-          secure: process.env.NODE_ENV === 'production', // Use 'secure' apenas em produção
+          expires: 1, 
+          secure: process.env.NODE_ENV === 'production', 
           sameSite: 'strict',
         })
-        // Opcional: pode ser trocado por um toast de sucesso
         alert("Login bem-sucedido!")
         router.push('/lista')
       }
