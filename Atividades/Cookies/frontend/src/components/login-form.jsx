@@ -14,24 +14,25 @@ import {
 } from "@/components/ui/card"
 import {
   Field,
-  FieldDescription,
   FieldGroup,
-  FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Terminal } from "lucide-react" // Importando um ícone para o alerta
 
 export function LoginForm({ className, ...props }) {
   const router = useRouter()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(null)
+  const [success, setSuccess] = useState(null) // Estado para a mensagem de sucesso
   const [isLoading, setIsLoading] = useState(false)
 
   const handleLogin = async (e) => {
     e.preventDefault()
     setIsLoading(true)
     setError(null)
+    setSuccess(null) // Limpa a mensagem de sucesso anterior
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}login`, {
@@ -50,17 +51,18 @@ export function LoginForm({ className, ...props }) {
 
       if (data.accessToken) {
         Cookies.set('token', data.accessToken, {
-          expires: 1, 
-          secure: process.env.NODE_ENV === 'production', 
+          expires: 1,
+          secure: process.env.NODE_ENV === 'production',
           sameSite: 'strict',
         })
-        alert("Login bem-sucedido!")
-        router.push('/lista')
+        setSuccess("Login bem-sucedido! Redirecionando...")
+        setTimeout(() => {
+          router.push('/lista')
+        }, 2000)
       }
     } catch (err) {
       setError(err.message)
     } finally {
-      setIsLoading(false)
     }
   }
 
@@ -76,6 +78,13 @@ export function LoginForm({ className, ...props }) {
         <CardContent>
           <form onSubmit={handleLogin}>
             <FieldGroup>
+              {success && (
+                <Alert className="border-green-500 text-green-700">
+                  <Terminal className="h-4 w-4" />
+                  <AlertTitle>Sucesso!</AlertTitle>
+                  <AlertDescription>{success}</AlertDescription>
+                </Alert>
+              )}
               {error && (
                 <Alert variant="destructive">
                   <AlertTitle>Erro no Login</AlertTitle>
@@ -83,10 +92,10 @@ export function LoginForm({ className, ...props }) {
                 </Alert>
               )}
               <Field>
-                <FieldLabel htmlFor="username">Usuário</FieldLabel>
+                <label htmlFor="username">Usuário</label>
                 <Input
                   id="username"
-                  type="text" // 'text' é mais apropriado que 'username'
+                  type="text"
                   placeholder="exemplo@email.com"
                   required
                   value={username}
@@ -96,7 +105,7 @@ export function LoginForm({ className, ...props }) {
               </Field>
               <Field>
                 <div className="flex items-center">
-                  <FieldLabel htmlFor="password">Senha</FieldLabel>
+                  <label htmlFor="password">Senha</label>
                   <a
                     href="#"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
@@ -117,7 +126,6 @@ export function LoginForm({ className, ...props }) {
                 <Button type="submit" disabled={isLoading}>
                   {isLoading ? "Entrando..." : "Entrar"}
                 </Button>
-                
               </Field>
             </FieldGroup>
           </form>
